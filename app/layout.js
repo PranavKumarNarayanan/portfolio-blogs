@@ -21,6 +21,11 @@ export default function RootLayout({ children }) {
             <p className="intro">
               <strong>Interests</strong>: systems programming, compiler design, operating systems, AI programming.
             </p>
+            <p className="intro">
+              <a href="https://github.com/PranavKumarNarayanan">GitHub</a>
+            </p>
+            
+          
             <nav className="nav">
               <a href="/">blog</a>
               <a href="/about">about</a>
