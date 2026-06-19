@@ -11,13 +11,12 @@ export default function RootLayout({ children }) {
       <body>
         <div className="page">
           <aside className="sidebar">
-            <h1 className="name"><a href="/">Pranav</a></h1>
+            <h1 className="name"><a href="/">Pranav Kumar S</a></h1>
             <p className="email">
-              <a href="mailto:youremail@example.com">youremail@example.com</a>
+              <a href="mailto:youremail@example.com">pranavkumarsankar@gmail.com</a>
             </p>
             <p className="intro">
-              CS student. Interested in AI compiler engineering, systems, and
-              Linux. This is where I write things down.
+              Computer science student. Linux enthusiast. Musician. Writer. <b>And a Lover</b>.
             </p>
             <nav className="nav">
               <a href="/">blog</a>
