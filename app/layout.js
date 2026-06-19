@@ -18,6 +18,9 @@ export default function RootLayout({ children }) {
             <p className="intro">
               Computer science student. Linux enthusiast. Musician. Writer. <b>And a Lover</b>.
             </p>
+            <p className="intro">
+              <strong>Interests</strong>: systems programming, compiler design, operating systems, AI programming.
+            </p>
             <nav className="nav">
               <a href="/">blog</a>
               <a href="/about">about</a>
