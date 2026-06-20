@@ -7,7 +7,7 @@ export default function AboutPage() {
     <article>
       <h1>About</h1>
       <p>
-        Hello there! I'm Pranav Kumar S, currently a student at Amrita Vishwa Vidyapeetham. I am interesting in "Systems programming", "Compiler engineering", and "Linux developemnt". 
+        Hello there! I'm Pranav Kumar S, currently a student at Amrita Vishwa Vidyapeetham. I am interesting in "Systems programming", "Compiler engineering", and "Linux develepment". 
         I have also spent a lot of time doing and studying AI. 
         I'm also the co-founder of <a href="https://github.com/Dreamteam-Nagercoil/alfred">Alfred</a>, an AI workflow system made to increase the productivity of developers.
       </p>
