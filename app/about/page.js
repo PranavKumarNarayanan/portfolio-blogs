@@ -35,8 +35,7 @@ export default function AboutPage() {
         </p> 
       <h2>Elsewhere</h2>
       <p>
-        <a href="https://github.com/PranavKumarNarayanan">GitHub</a> ·{' '}
-        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+        <a href="https://github.com/PranavKumarNarayanan">GitHub</a>
       </p>
     </article>
   );
