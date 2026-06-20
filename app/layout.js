@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Pranav',
-  description: 'Pranav — notes on systems, compilers, and whatever else.',
+  description: 'About me, and around me.',
 };
 
 export default function RootLayout({ children }) {
