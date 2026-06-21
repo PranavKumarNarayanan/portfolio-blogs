@@ -12,7 +12,7 @@ export default function HomePage() {
             <Link href={`/blog/${post.slug}`} className="post-title">
               {post.title}
             </Link>
-            {post.date && <span className="post-date">{post.date}</span>}
+            {post.date && <span className="post-date">{post.date}· {post.readTime} min read</span>}
             {post.summary && <p className="post-summary">{post.summary}</p>}
           </li>
         ))}

@@ -16,7 +16,7 @@ export default function PostPage({ params }) {
   return (
     <article>
       <h1>{post.title}</h1>
-      {post.date && <p className="post-date">{post.date}</p>}
+      {post.date && <p className="post-date">{post.date}{post.date && ' · '}{post.readTime} min read</p>}
       <MDXRemote source={post.content} />
     </article>
   );
