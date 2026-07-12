@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
               Computer science student. Linux enthusiast. Musician. Writer. <b>And a Lover</b>.
             </p>
             <p className="intro">
-              <strong>Interests</strong>: systems programming, compiler design, operating systems, AI programming.
+              <strong>Interests</strong>: systems programming, compiler design, operating systems, graphics programming.
             </p>
             <p className="intro">
               <a href="https://github.com/PranavKumarNarayanan">GitHub</a>
