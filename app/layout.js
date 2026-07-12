@@ -1,4 +1,5 @@
 import './globals.css';
+import ThemeToggle from './theme-toggle';
 
 export const metadata = {
   title: 'Pranav',
@@ -11,7 +12,10 @@ export default function RootLayout({ children }) {
       <body>
         <div className="page">
           <aside className="sidebar">
-            <h1 className="name"><a href="/">Pranav Kumar S</a></h1>
+            <div className="sidebar-top">
+              <h1 className="name"><a href="/">Pranav Kumar S</a></h1>
+              <ThemeToggle />
+            </div>
             <p className="email">
               <a href="mailto:youremail@example.com">pranavkumarsankar@gmail.com</a>
             </p>
@@ -24,8 +28,7 @@ export default function RootLayout({ children }) {
             <p className="intro">
               <a href="https://github.com/PranavKumarNarayanan">GitHub</a>
             </p>
-            
-          
+
             <nav className="nav">
               <a href="/">blog</a>
               <a href="/about">about</a>

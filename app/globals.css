@@ -2,24 +2,61 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  --bg: #f7f1e8;
+  --text: #111111;
+  --text-muted: #333333;
+  --text-soft: #444444;
+  --text-faint: #777777;
+  --link: #111111;
+  --link-hover: #555555;
+  --accent: #b8a88f;
+  --accent-strong: #4a3f33;
+  --surface: #f4f4f4;
+  --surface-strong: #3a2f25;
+  --surface-inline: #ece1d2;
+  --surface-inline-text: #5c4a37;
+  --border: rgba(17, 17, 17, 0.12);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #16120f;
+  --text: #f6efe8;
+  --text-muted: #d9cdbb;
+  --text-soft: #c2b39b;
+  --text-faint: #9f8d78;
+  --link: #f6efe8;
+  --link-hover: #e0caa8;
+  --accent: #8d7457;
+  --accent-strong: #f2ddbb;
+  --surface: #221b15;
+  --surface-strong: #2d241d;
+  --surface-inline: #3b2f25;
+  --surface-inline-text: #f5e3c8;
+  --border: rgba(246, 239, 232, 0.16);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #f7f1e8;
-  color: #111111;
+  background: var(--bg);
+  color: var(--text);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
   font-size: 17px;
   line-height: 1.6;
+  transition: background 180ms ease, color 180ms ease;
 }
 
 a {
-  color: #111111;
+  color: var(--link);
   text-decoration: underline;
 }
 
 a:hover {
-  color: #555555;
+  color: var(--link-hover);
 }
 
 /* page is centered with margin on both sides; doesn't use full width */
@@ -42,10 +79,17 @@ a:hover {
   top: 60px;
 }
 
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
 .name {
   font-size: 20px;
   font-weight: 600;
-  margin: 0 0 8px 0;
+  margin: 0;
 }
 
 .email {
@@ -56,8 +100,33 @@ a:hover {
 
 .intro {
   font-size: 15px;
-  color: #333333;
+  color: var(--text-muted);
   margin: 0 0 24px 0;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: rgba(184, 168, 143, 0.12);
+}
+
+.theme-toggle-label {
+  text-transform: lowercase;
 }
 
 .nav {
@@ -91,14 +160,14 @@ a:hover {
 
 .post-date {
   font-size: 13px;
-  color: #777777;
+  color: var(--text-faint);
   margin-left: 8px;
   text-decoration: none;
 }
 
 .post-summary {
   font-size: 15px;
-  color: #444444;
+  color: var(--text-soft);
   margin: 4px 0 0 0;
 }
 
@@ -118,14 +187,14 @@ a:hover {
 }
 
 .content article pre {
-  background: #f4f4f4;
+  background: var(--surface);
   padding: 12px;
   overflow-x: auto;
   font-size: 14px;
 }
 
 .content article code {
-  background: #f4f4f4;
+  background: var(--surface);
   padding: 2px 4px;
   font-size: 0.9em;
 }
@@ -142,7 +211,7 @@ a:hover {
   margin: 24px 0;
   padding: 8px 0 8px 48px;
   font-style: italic;
-  color: #4a3f33;
+  color: var(--accent-strong);
 }
 
 .content article blockquote::before {
@@ -152,26 +221,7 @@ a:hover {
   top: -10px;
   font-size: 48px;
   font-family: Georgia, serif;
-  color: #b8a88f;
-  line-height: 1;
-}
-
-.content article blockquote {
-  position: relative;
-  margin: 24px 0;
-  padding: 8px 0 8px 48px;
-  font-style: italic;
-  color: #4a3f33;
-}
-
-.content article blockquote::before {
-  content: "\201C";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  font-size: 48px;
-  font-family: Georgia, serif;
-  color: #b8a88f;
+  color: var(--accent);
   line-height: 1;
 }
 
@@ -179,7 +229,7 @@ a:hover {
   content: "\201D";
   font-size: 48px;
   font-family: Georgia, serif;
-  color: #b8a88f;
+  color: var(--accent);
   line-height: 1;
   margin-left: 6px;
   vertical-align: -16px;
@@ -192,8 +242,8 @@ a:hover {
 
 /* code blocks — darker brown, monospace, stands apart from prose */
 .content article pre {
-  background: #3a2f25;
-  color: #f0e8db;
+  background: var(--surface-strong);
+  color: var(--text);
   padding: 16px;
   border-radius: 4px;
   overflow-x: auto;
@@ -211,8 +261,8 @@ a:hover {
 
 /* inline code — lighter, sits between body text and code blocks */
 .content article code {
-  background: #ece1d2;
-  color: #5c4a37;
+  background: var(--surface-inline);
+  color: var(--surface-inline-text);
   padding: 2px 6px;
   border-radius: 3px;
   font-family: "SF Mono", Consolas, "Courier New", monospace;
@@ -229,5 +279,9 @@ a:hover {
     position: relative;
     top: 0;
     margin-bottom: 32px;
+  }
+
+  .sidebar-top {
+    align-items: flex-start;
   }
 }
