@@ -14,10 +14,15 @@
   --accent: #b8a88f;
   --accent-strong: #4a3f33;
   --surface: #f4f4f4;
-  --surface-strong: #3a2f25;
+  --surface-strong: #2b2b2b;
+  --surface-strong-text: #f0e8db;
   --surface-inline: #ece1d2;
   --surface-inline-text: #5c4a37;
   --border: rgba(17, 17, 17, 0.12);
+  --table-header-bg: #ece1d2;
+  --table-row-alt-bg: #f5efe8;
+  --table-cell-bg: #faf6f0;
+  --table-border: #c9b99a;
 }
 
 :root[data-theme='dark'] {
@@ -32,10 +37,15 @@
   --accent: #8d7457;
   --accent-strong: #f2ddbb;
   --surface: #221b15;
-  --surface-strong: #2d241d;
+  --surface-strong: #1e1e1e;
+  --surface-strong-text: #f0e8db;
   --surface-inline: #3b2f25;
   --surface-inline-text: #f5e3c8;
   --border: rgba(246, 239, 232, 0.16);
+  --table-header-bg: #2e2520;
+  --table-row-alt-bg: #221c17;
+  --table-cell-bg: #1e1812;
+  --table-border: #4a3f33;
 }
 
 html,
@@ -186,19 +196,6 @@ a:hover {
   margin: 12px 0;
 }
 
-.content article pre {
-  background: var(--surface);
-  padding: 12px;
-  overflow-x: auto;
-  font-size: 14px;
-}
-
-.content article code {
-  background: var(--surface);
-  padding: 2px 4px;
-  font-size: 0.9em;
-}
-
 .content article ul,
 .content article ol {
   margin: 12px 0;
@@ -240,10 +237,10 @@ a:hover {
   display: inline;
 }
 
-/* code blocks — darker brown, monospace, stands apart from prose */
+/* code blocks */
 .content article pre {
   background: var(--surface-strong);
-  color: var(--text);
+  color: var(--surface-strong-text);
   padding: 16px;
   border-radius: 4px;
   overflow-x: auto;
@@ -259,7 +256,7 @@ a:hover {
   font-size: inherit;
 }
 
-/* inline code — lighter, sits between body text and code blocks */
+/* inline code */
 .content article code {
   background: var(--surface-inline);
   color: var(--surface-inline-text);
@@ -267,6 +264,61 @@ a:hover {
   border-radius: 3px;
   font-family: "SF Mono", Consolas, "Courier New", monospace;
   font-size: 0.9em;
+}
+
+/* tables */
+.content article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.content article th,
+.content article td {
+  border: 1px solid var(--table-border);
+  padding: 8px 12px;
+  text-align: left;
+  background: var(--table-cell-bg);
+  color: var(--text);
+}
+
+.content article th {
+  background: var(--table-header-bg);
+  font-weight: 600;
+}
+
+.content article tr:nth-child(even) td {
+  background: var(--table-row-alt-bg);
+}
+
+/* pikchr diagrams */
+.pikchr-diagram {
+  margin: 24px 0;
+  overflow-x: auto;
+  color: var(--text);
+}
+
+.pikchr-diagram svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  font-family: inherit;
+}
+
+/* Adapt hardcoded black/white SVG lines and shapes to theme variables */
+.pikchr-diagram svg path,
+.pikchr-diagram svg rect,
+.pikchr-diagram svg polygon,
+.pikchr-diagram svg circle,
+.pikchr-diagram svg ellipse,
+.pikchr-diagram svg line {
+  stroke: currentColor !important;
+}
+
+.pikchr-diagram svg text {
+  fill: currentColor !important;
 }
 
 @media (max-width: 700px) {
