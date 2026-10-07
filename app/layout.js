@@ -4,6 +4,9 @@ import ThemeToggle from './theme-toggle';
 export const metadata = {
   title: 'Pranav',
   description: 'About me, and around me.',
+  verification: {
+    google: "oM8H3CNVFVqaGgtMKb3dYN_DddfBMv0DKRCuS2pn8SU",
+  }
 };
 
 export default function RootLayout({ children }) {
